@@ -42,11 +42,6 @@ resource "aws_dynamodb_table" "terraform_locks" {
 
 
 
-# resource "aws_s3_bucket" "my_s3" {
-#   bucket = "alessandro-test-s3-job"
-
-#   # Prevent accidental deletion of this S3 bucket
-#   lifecycle {
-#     prevent_destroy = true
-#   }
-# }
+ resource "aws_s3_bucket" "my_s3" {
+   bucket = "alessandro-test-s3-job"
+ }
