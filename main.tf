@@ -45,3 +45,8 @@ provider "aws" {
  resource "aws_s3_bucket" "my_s3" {
    bucket = "alessandro-test-s3-job"
  }
+
+output "s3_bucket_name" {
+  value = aws_s3_bucket.my_s3.bucket
+  sensitive = true
+}
