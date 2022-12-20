@@ -2,19 +2,19 @@ provider "aws" {
   region = "us-east-2"
 }
 
-terraform {
-  backend "s3" {
-    key = "global/s3/terraform.tfstate"
-    bucket         = "alessandro-test-s3"
-    region         = "us-east-2"
-    dynamodb_table = "alessandro-test-dynamo"
-    encrypt        = false
-  }
-}
+ terraform {
+   backend "s3" {
+     key            = "global/s3/terraform.tfstate"
+     bucket         = "alessandro-test-s3"
+     region         = "us-east-2"
+     dynamodb_table = "alessandro-test-dynamo"
+     encrypt        = false
+   }
+ }
 
 resource "aws_s3_bucket" "terraform_state" {
   bucket = "alessandro-test-s3"
- 
+
   # Prevent accidental deletion of this S3 bucket
   lifecycle {
     prevent_destroy = true
@@ -42,11 +42,11 @@ resource "aws_dynamodb_table" "terraform_locks" {
 
 
 
-resource "aws_s3_bucket" "my_s3" {
-  bucket = "alessandro-test-s3-job"
- 
-  # Prevent accidental deletion of this S3 bucket
-  lifecycle {
-    prevent_destroy = true
-  }
-}
+# resource "aws_s3_bucket" "my_s3" {
+#   bucket = "alessandro-test-s3-job"
+
+#   # Prevent accidental deletion of this S3 bucket
+#   lifecycle {
+#     prevent_destroy = true
+#   }
+# }
