@@ -1,11 +1,6 @@
 provider "aws" {
   region = "us-east-2"
 }
-
- terraform {
-   backend "s3" {
-     key            = "global/s3/terraform.tfstate"
-   }
  }
 
 # resource "aws_s3_bucket" "terraform_state" {
