@@ -41,7 +41,7 @@ provider "aws" {
    bucket = var.s3_bucket_name
  }
 
-output "s3_bucket_name" {
+output "s3_bucket_name_2" {
   value = aws_s3_bucket.my_s3.bucket
   sensitive = true
 }
