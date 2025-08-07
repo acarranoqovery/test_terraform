@@ -38,7 +38,7 @@ provider "aws" {
 
 
  resource "aws_s3_bucket" "my_s3" {
-   bucket = "qovery-alessandro-test-s3-job"
+   bucket = var.s3_bucket_name
  }
 
 output "s3_bucket_name" {
